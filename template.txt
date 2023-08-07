@@ -1,13 +1,25 @@
+# Entry
 <div class="entry">
     <img class="entry-icon">
     <div class="entry-info">
         <h1 class="entry-label"></h1>
         <h2 class="entry-language">Language[s]:</h2>
     </div>
-    <a>
+    <a onclick="alert('Your download will start soon')" href="">
         <img class="download-icon" src="img/download.png">
     </a>
     <img class="expand-icon" src="img/expand.png">
     <div style="clear: both;"></div>
     <p class="entry-content" style="display:none;"></p>
+</div>
+
+# Photograph
+<div class="photo-entry">
+    <img class="photo" src="img/photography/">
+    <h1 class="photo-info">
+        <span class="photo-date"></span>
+    </h1>
+    <a href="img/photography/" download=".JPG">
+        <img class="download-icon photo-icon" src="img/download.png">
+    </a>
 </div>
