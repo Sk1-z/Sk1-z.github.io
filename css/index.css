@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Space";
+  src: url("../dump/this/SpaceMono-Regular.ttf") format("ttf");
+}
+
+:root {
+  /* --text: rgb(252, 253, 253);
+    --background: rgb(3, 6, 7);
+    --primary: rgb(57, 66, 116);
+    --secondary: rgb(119, 136, 153);
+    --secondary: rgb(34, 30, 62);
+    --tertiary: rgb(176, 196, 222);
+    rgb(94, 74, 181);
+    --accent: rgb(100, 116, 160); */
+
+  --text: #efefef;
+  --background: #313335;
+  --primary: #363d44;
+  --secondary: #23292f;
+  --secondaryC: #313840;
+  --tertiary: #444444;
+  --accent: #5d6974;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.centerX {
+  display: flex;
+  justify-content: center;
+}
+.centerY {
+  display: flex;
+  align-items: center;
+}
+
+.centerXY {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 5vh;
+}
+
+h2 {
+  font-size: 4vh;
+}
+
+h3 {
+  font-size: 3vh;
+}
+
+h4 {
+  font-size: 2vh;
+}
+
+h5 {
+  font-size: 1vh;
+}
+
+body {
+  font-family: "Space", monospace;
+  color: white;
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}

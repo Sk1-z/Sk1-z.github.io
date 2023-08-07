@@ -1,0 +1,74 @@
+#content-container {
+  text-align: center;
+  padding: 2vw;
+}
+
+.content {
+  background-color: var(--secondary);
+  width: 46vw;
+  padding: 2vw;
+  border-radius: 5vh;
+  box-shadow: 0 0 14px var(--tertiary), 0 0 18px var(--tertiary),
+    0 0 30px var(--tertiary);
+}
+
+.entry {
+  background-color: var(--primary);
+  border-radius: 5vh;
+  margin-bottom: 1vh;
+  text-align: left;
+  padding: 0.5vw;
+}
+
+.entry-icon {
+  float: left;
+  width: 16vh;
+  height: 16vh;
+  margin: 2vh;
+}
+
+.entry-info {
+  float: left;
+}
+
+.entry-label {
+  position: relative;
+  left: 2vw;
+  margin-bottom: 0;
+}
+
+.entry-language {
+  position: relative;
+  left: 2vw;
+  margin-top: 1vh;
+  color: var(--accent);
+}
+
+.download-icon {
+  width: 6vh;
+  height: 6vh;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  right: 10vh;
+  top: 2.5vh;
+}
+
+.expand-icon {
+  width: 6vh;
+  height: 6vh;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  right: 4vh;
+  top: 12.5vh;
+}
+
+.expanded {
+  transform: rotate(180deg);
+}
+
+.entry-content {
+  text-align: center;
+  padding: 0 0.25vw 0;
+}

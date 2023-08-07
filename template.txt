@@ -1,0 +1,13 @@
+<div class="entry">
+    <img class="entry-icon">
+    <div class="entry-info">
+        <h1 class="entry-label"></h1>
+        <h2 class="entry-language">Language[s]:</h2>
+    </div>
+    <a>
+        <img class="download-icon" src="img/download.png">
+    </a>
+    <img class="expand-icon" src="img/expand.png">
+    <div style="clear: both;"></div>
+    <p class="entry-content" style="display:none;"></p>
+</div>
