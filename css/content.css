@@ -37,6 +37,11 @@
   margin-bottom: 0;
 }
 
+.version {
+  color: var(--accent);
+  padding-left: 2vh;
+}
+
 .entry-language {
   position: relative;
   left: 2vw;
