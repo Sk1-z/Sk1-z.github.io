@@ -27,7 +27,7 @@
     </a>
     <img class="expand-icon" src="img/expand.png">
     <div style="clear: both;"></div>
-    <p class="entry-content" style="display:none;"></p>
+    <h3 class="entry-content" style="display:none;"></h3>
 </div>
 
 # Photograph
