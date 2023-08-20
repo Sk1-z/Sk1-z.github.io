@@ -43,6 +43,26 @@
   align-items: center;
 }
 
+.background {
+  color: var(--background);
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.tertiary {
+  color: var(--tertiary);
+}
+
+.accent {
+  color: var(--accent);
+}
+
 h1,
 h2,
 h3,

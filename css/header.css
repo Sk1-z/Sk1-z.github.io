@@ -57,11 +57,25 @@
 #sidebar {
   background-color: var(--primary);
   position: absolute;
-  width: 15vw;
-  left: 1vw;
-  top: 15vh;
+  width: 21vw;
+  left: 0.5vw;
+  top: 12.5vh;
   border-radius: 4vh;
   padding: 1vw;
+}
+
+.sort-select,
+.sort-selectf,
+.show-select {
+  padding: 0.2vw;
+  margin: 0;
+  cursor: pointer;
+}
+
+.sort-select:hover,
+.sort-selectf:hover,
+.show-select:hover {
+  text-decoration: underline;
 }
 
 .social-icon {
