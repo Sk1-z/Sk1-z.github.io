@@ -305,6 +305,15 @@ values of the pixel the mouse is at. If you have python installed, all you have 
 main.pyw script within the zip.`
 );
 
+const schizle: proj = new proj(
+  "SchizleLogo",
+  "Schizle",
+  "a-0.1.0",
+  "C",
+  "schizle.exe",
+  "Schizle is a very simple scripting language I made with C and premake."
+);
+
 let projEntries: proj[];
 
 const alienImmigration: proj = new proj(
@@ -357,7 +366,7 @@ class foto extends entry {
 
 function sortEntries(): void {
   docEntries = [fioDocs];
-  projEntries = [wimo, fileInOut, taskuu];
+  projEntries = [schizle, wimo, fileInOut, taskuu];
   gameEntries = [alienImmigration];
 
   sections[1].innerHTML = "";
@@ -439,6 +448,7 @@ function sortPhotos(): void {
       if (cReversed) {
         collectionNames.reverse();
         collections.reverse();
+        cReversed = false;
       }
       showPhotos();
       break;
@@ -446,8 +456,8 @@ function sortPhotos(): void {
       if (!cReversed) {
         collectionNames.reverse();
         collections.reverse();
+        cReversed = true;
       }
-      cReversed = true;
       showPhotos();
   }
 }
