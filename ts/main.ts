@@ -294,17 +294,6 @@ Fio provides multiple functions for file system operations and includes some bas
 It was my first module I ever made.`
 );
 
-const wimo: proj = new proj(
-  "WIMO",
-  "Wimo",
-  "1.0.0",
-  "Python",
-  "wimo_script.zip",
-  `What is my mouse on is a small python script I made to get the mouses coordinates, hex, and rgb
-values of the pixel the mouse is at. If you have python installed, all you have to do is run the
-main.pyw script within the zip.`
-);
-
 const schizle: proj = new proj(
   "SchizleLogo",
   "Schizle",
@@ -366,7 +355,7 @@ class foto extends entry {
 
 function sortEntries(): void {
   docEntries = [fioDocs];
-  projEntries = [schizle, wimo, fileInOut, taskuu];
+  projEntries = [schizle, fileInOut, taskuu];
   gameEntries = [alienImmigration];
 
   sections[1].innerHTML = "";

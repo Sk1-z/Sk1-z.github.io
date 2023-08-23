@@ -200,7 +200,6 @@ var proj = /** @class */ (function (_super) {
 }(entry));
 var taskuu = new proj("taskbuddy", "Taskuu", "1.0.0", "Javascript", "taskbuddy.Setup.1.0.0.exe", "Taskbuddy is a task-keeping app built using electronJS. It was my first \"real\" Javascript \nproject and was my sign to stay away from Javascript and web development.");
 var fileInOut = new proj("fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
-var wimo = new proj("WIMO", "Wimo", "1.0.0", "Python", "wimo_script.zip", "What is my mouse on is a small python script I made to get the mouses coordinates, hex, and rgb\nvalues of the pixel the mouse is at. If you have python installed, all you have to do is run the\nmain.pyw script within the zip.");
 var schizle = new proj("SchizleLogo", "Schizle", "a-0.1.0", "C", "schizle.exe", "Schizle is a very simple scripting language I made with C and premake.");
 var projEntries;
 var alienImmigration = new proj("alienimmigration", "Alien Imm...", "1.4.0", "C#", "alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.");
@@ -231,7 +230,7 @@ var foto = /** @class */ (function (_super) {
 sortBtns[0].click();
 function sortEntries() {
     docEntries = [fioDocs];
-    projEntries = [schizle, wimo, fileInOut, taskuu];
+    projEntries = [schizle, fileInOut, taskuu];
     gameEntries = [alienImmigration];
     sections[1].innerHTML = "";
     sections[2].innerHTML = "";
