@@ -193,14 +193,14 @@ var proj = /** @class */ (function (_super) {
         return _this;
     }
     proj.prototype.stringify = function () {
-        var e = "\n            <div class=\"entry\">\n                <img class=\"entry-icon\" src=\"img/entries/".concat(this.img, ".ico\">\n                <div class=\"entry-info\">\n                    <h1 class=\"entry-label\">").concat(this.name, "<span class=\"version\">").concat(this.version, "</span></h1>\n                    <h2 class=\"entry-language\">Language[s]: ").concat(this.lang, "</h2>\n                </div>\n                <a href=\"download/").concat(this.download, "\">\n                    <img class=\"download-icon\" src=\"img/download.png\">\n                </a>\n                <img class=\"expand-icon\" src=\"img/expand.png\">\n                <div style=\"clear: both;\"></div>\n                <h3 class=\"entry-content\" style=\"display:none;\">\n                    ").concat(this.bio, "\n                </h3>\n            </div>\n    ");
+        var e = "\n            <div class=\"entry\">\n                <img class=\"entry-icon\" src=\"img/entries/".concat(this.img, ".ico\">\n                <div class=\"entry-info\">\n                    <h1 class=\"entry-label\">").concat(this.name, "<span class=\"version\">").concat(this.version, "</span></h1>\n                    <h2 class=\"entry-language\">Language[s]: ").concat(this.lang, "</h2>\n                </div>\n                <a href=\"").concat(this.download, "\">\n                    <img class=\"download-icon\" src=\"img/download.png\">\n                </a>\n                <img class=\"expand-icon\" src=\"img/expand.png\">\n                <div style=\"clear: both;\"></div>\n                <h3 class=\"entry-content\" style=\"display:none;\">\n                    ").concat(this.bio, "\n                </h3>\n            </div>\n    ");
         return e;
     };
     return proj;
 }(entry));
-var taskuu = new proj("taskbuddy", "Taskuu", "1.0.0", "Javascript", "taskbuddy.Setup.1.0.0.exe", "Taskbuddy is a task-keeping app built using electronJS. It was my first \"real\" Javascript \nproject and was my sign to stay away from Javascript and web development.");
+var taskuu = new proj("taskbuddy", "Taskuu", "1.0.0", "Javascript", "download/taskbuddy.Setup.1.0.0.exe", "Taskbuddy is a task-keeping app built using electronJS. It was my first \"real\" Javascript \nproject and was my sign to stay away from Javascript and web development.");
 var fileInOut = new proj("fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
-var schizle = new proj("SchizleLogo", "Schizle", "a-0.1.0", "C", "schizle.exe", "Schizle is a very simple scripting language I made with C and premake.");
+var schizle = new proj("SchizleLogo", "Schizle", "a-0.1.0", "C", "download/schizle.exe", "Schizle is a very simple scripting language I made with C and premake.");
 var projEntries;
 var alienImmigration = new proj("alienimmigration", "Alien Imm...", "1.4.0", "C#", "alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.");
 var gameEntries;

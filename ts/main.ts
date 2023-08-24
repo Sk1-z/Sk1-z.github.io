@@ -258,7 +258,7 @@ class proj extends entry {
                     <h1 class="entry-label">${this.name}<span class="version">${this.version}</span></h1>
                     <h2 class="entry-language">Language[s]: ${this.lang}</h2>
                 </div>
-                <a href="download/${this.download}">
+                <a href="${this.download}">
                     <img class="download-icon" src="img/download.png">
                 </a>
                 <img class="expand-icon" src="img/expand.png">
@@ -278,7 +278,7 @@ const taskuu: proj = new proj(
   "Taskuu",
   "1.0.0",
   "Javascript",
-  "taskbuddy.Setup.1.0.0.exe",
+  "download/taskbuddy.Setup.1.0.0.exe",
   `Taskbuddy is a task-keeping app built using electronJS. It was my first "real" Javascript 
 project and was my sign to stay away from Javascript and web development.`
 );
@@ -299,7 +299,7 @@ const schizle: proj = new proj(
   "Schizle",
   "a-0.1.0",
   "C",
-  "schizle.exe",
+  "download/schizle.exe",
   "Schizle is a very simple scripting language I made with C and premake."
 );
 
