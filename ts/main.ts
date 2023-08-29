@@ -235,6 +235,7 @@ class proj extends entry {
   version: string;
   lang: string;
   bio: string;
+  game: boolean;
 
   constructor(
     icon: string,
@@ -242,12 +243,14 @@ class proj extends entry {
     version: string,
     lang: string,
     download: string,
-    bio: string
+    bio: string,
+    game: boolean = false
   ) {
     super(icon, name, download);
     this.version = version;
     this.lang = lang;
     this.bio = bio;
+    this.game = game;
   }
 
   stringify(): string {
@@ -255,8 +258,12 @@ class proj extends entry {
             <div class="entry">
                 <img class="entry-icon" src="img/entries/${this.img}.ico">
                 <div class="entry-info">
-                    <h1 class="entry-label">${this.name}<span class="version">${this.version}</span></h1>
-                    <h2 class="entry-language">Language[s]: ${this.lang}</h2>
+                    <h1 class="entry-label">${this.name}<span class="version">${
+      this.version
+    }</span></h1>
+                    <h2 class="entry-language">${
+                      !this.game ? "Language[s]" : "Framework"
+                    }: ${this.lang}</h2>
                 </div>
                 <a href="${this.download}">
                     <img class="download-icon" src="img/download.png">
@@ -309,10 +316,11 @@ const alienImmigration: proj = new proj(
   "alienimmigration",
   "Alien Imm...",
   "1.4.0",
-  "C#",
+  "XNA",
   "alienimmigration.zip",
   `Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.
-Alien Immigration was my introduction to C#.`
+Alien Immigration was my introduction to C#.`,
+  true
 );
 
 let gameEntries: proj[];

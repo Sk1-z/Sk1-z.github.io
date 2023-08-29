@@ -185,15 +185,17 @@ var fioDocs = new doc("fio", "File In Out", ["Module", "Lua", "Files"], "FIO.pdf
 var docEntries;
 var proj = /** @class */ (function (_super) {
     __extends(proj, _super);
-    function proj(icon, name, version, lang, download, bio) {
+    function proj(icon, name, version, lang, download, bio, game) {
+        if (game === void 0) { game = false; }
         var _this = _super.call(this, icon, name, download) || this;
         _this.version = version;
         _this.lang = lang;
         _this.bio = bio;
+        _this.game = game;
         return _this;
     }
     proj.prototype.stringify = function () {
-        var e = "\n            <div class=\"entry\">\n                <img class=\"entry-icon\" src=\"img/entries/".concat(this.img, ".ico\">\n                <div class=\"entry-info\">\n                    <h1 class=\"entry-label\">").concat(this.name, "<span class=\"version\">").concat(this.version, "</span></h1>\n                    <h2 class=\"entry-language\">Language[s]: ").concat(this.lang, "</h2>\n                </div>\n                <a href=\"").concat(this.download, "\">\n                    <img class=\"download-icon\" src=\"img/download.png\">\n                </a>\n                <img class=\"expand-icon\" src=\"img/expand.png\">\n                <div style=\"clear: both;\"></div>\n                <h3 class=\"entry-content\" style=\"display:none;\">\n                    ").concat(this.bio, "\n                </h3>\n            </div>\n    ");
+        var e = "\n            <div class=\"entry\">\n                <img class=\"entry-icon\" src=\"img/entries/".concat(this.img, ".ico\">\n                <div class=\"entry-info\">\n                    <h1 class=\"entry-label\">").concat(this.name, "<span class=\"version\">").concat(this.version, "</span></h1>\n                    <h2 class=\"entry-language\">").concat(!this.game ? "Language[s]" : "Framework", ": ").concat(this.lang, "</h2>\n                </div>\n                <a href=\"").concat(this.download, "\">\n                    <img class=\"download-icon\" src=\"img/download.png\">\n                </a>\n                <img class=\"expand-icon\" src=\"img/expand.png\">\n                <div style=\"clear: both;\"></div>\n                <h3 class=\"entry-content\" style=\"display:none;\">\n                    ").concat(this.bio, "\n                </h3>\n            </div>\n    ");
         return e;
     };
     return proj;
@@ -202,7 +204,7 @@ var taskuu = new proj("taskbuddy", "Taskuu", "1.0.0", "Javascript", "download/ta
 var fileInOut = new proj("fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
 var schizle = new proj("SchizleLogo", "Schizle", "a-0.1.0", "C", "download/schizle.exe", "Schizle is a very simple scripting language I made with C and premake.");
 var projEntries;
-var alienImmigration = new proj("alienimmigration", "Alien Imm...", "1.4.0", "C#", "alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.");
+var alienImmigration = new proj("alienimmigration", "Alien Imm...", "1.4.0", "XNA", "alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.", true);
 var gameEntries;
 var foto = /** @class */ (function (_super) {
     __extends(foto, _super);
