@@ -204,7 +204,7 @@ var taskuu = new proj("taskbuddy", "Taskuu", "1.1.0", "Javascript", "download/Ta
 var fileInOut = new proj("fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
 var schizle = new proj("SchizleLogo", "Schizle", "a-0.1.0", "C", "download/schizle.exe", "Schizle is a very simple scripting language I made with C and premake.");
 var projEntries;
-var alienImmigration = new proj("alienimmigration", "Alien Imm...", "1.4.0", "XNA", "alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.", true);
+var alienImmigration = new proj("alienimmigration", "Alien Imm...", "1.4.0", "XNA", "download/alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.", true);
 var gameEntries;
 var foto = /** @class */ (function (_super) {
     __extends(foto, _super);
