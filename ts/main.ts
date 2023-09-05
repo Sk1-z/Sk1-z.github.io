@@ -283,9 +283,9 @@ class proj extends entry {
 const taskuu: proj = new proj(
   "taskbuddy",
   "Taskuu",
-  "1.0.0",
+  "1.1.0",
   "Javascript",
-  "download/taskbuddy.Setup.1.0.0.exe",
+  "download/Taskuu.Setup.exe",
   `Taskbuddy is a task-keeping app built using electronJS. It was my first "real" Javascript 
 project and was my sign to stay away from Javascript and web development.`
 );
