@@ -1,5 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Nasty js
-ts/js/* linguist-vendored
+# Ruining my stats I despise web dev
+*.js linguist-vendored
+*.ts linguist-vendored
+*.html linguist-vendored
+*.css linguist-vendored
