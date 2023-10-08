@@ -304,9 +304,9 @@ It was my first module I ever made.`
 const schizle: proj = new proj(
   "SchizleLogo",
   "Schizle",
-  "a-0.1.0",
+  "a-0.2.0",
   "C",
-  "download/schizle.exe",
+  "download/schizle_interpreter.exe",
   "Schizle is a very simple scripting language I made with C and premake."
 );
 
@@ -317,7 +317,7 @@ const alienImmigration: proj = new proj(
   "Alien Imm...",
   "1.4.0",
   "XNA",
-  "alienimmigration.zip",
+  "download/alienimmigration.zip",
   `Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.
 Alien Immigration was my introduction to C#.`,
   true
