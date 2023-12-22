@@ -304,10 +304,41 @@ It was my first module I ever made.`
 const schizle: proj = new proj(
   "SchizleLogo",
   "Schizle",
-  "a-0.2.0",
+  "a-0.5.0",
   "C",
-  "download/schizle_interpreter.exe",
+  "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha",
   "Schizle is a very simple scripting language I made with C and premake."
+);
+
+const wiced: proj = new proj(
+  "wic",
+  "Wiced",
+  "1.0.0",
+  "Python, Cython",
+  "download/wic",
+  "What is my computer even doing is a light curses-based linux performance monitor."
+);
+
+const preprepake: proj = new proj(
+  "2pake",
+  "2pake",
+  "1.0.0",
+  "Lua",
+  "download/2pake",
+  `2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 
+makes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers 
+unfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.`
+);
+
+const CompleteC: proj = new proj(
+  "CompleteC",
+  "CompleteC",
+  "1.0.0",
+  "C",
+  "download/include.zip",
+  `I made complete C to make C feel more complete and batteries include while still remaining true to the style 
+of the language. It is not meant to make C into a scripting language, just remove the need to make the same 
+types of structs and functions everytime a new project is started in a modular style.`
 );
 
 let projEntries: proj[];
@@ -347,23 +378,12 @@ class foto extends entry {
   }
 }
 
-// sections[4].innerHTML += "<h1>-Untitled #1-</h1>";
-// for (let i = 0; i < 2; i++) {
-//   sections[4].innerHTML += fotoEntries[i].stringify();
-// }
-// sections[4].innerHTML += "<h1>-EOC-</h1>";
-// sections[4].innerHTML += "<h1>-Jah's vision-</h1>";
-// for (let i = 2; i < 9; i++) {
-//   sections[4].innerHTML += fotoEntries[i].stringify();
-// }
-// sections[4].innerHTML += "<h1>-EOC-</h1>";
-
 //render sorts
 (sortBtns[0] as any).click();
 
 function sortEntries(): void {
   docEntries = [fioDocs];
-  projEntries = [schizle, fileInOut, taskuu];
+  projEntries = [CompleteC, preprepake, wiced, schizle, fileInOut, taskuu];
   gameEntries = [alienImmigration];
 
   sections[1].innerHTML = "";
