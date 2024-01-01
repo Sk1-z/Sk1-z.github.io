@@ -26,7 +26,7 @@ function showHighlightTitleBar(num: number): void {
     header.className = "select";
   }
 
-  headers[num].className = "select selected";
+  headers[num].className = "select selected-header";
 }
 
 for (let i = 0; i < headers.length; i++) {
@@ -83,6 +83,45 @@ sortBtns[3].addEventListener("click", () => {
   sortEntries();
 });
 
+enum showSelection {
+  All,
+  Unarchived,
+  Archived,
+}
+
+let show: showSelection = showSelection.Unarchived;
+
+const showBtns = Array.from(document.getElementsByClassName("show-select"));
+
+function showHighlightShown(num: number): void {
+  for (let btn of showBtns) {
+    btn.className = "show-select";
+  }
+
+  showBtns[num].className = "show-select selected";
+}
+
+for (let i = 0; i < showBtns.length; i++) {
+  showBtns[i].addEventListener("click", () => {
+    showHighlightShown(i);
+  });
+}
+
+showBtns[0].addEventListener("click", () => {
+  show = showSelection.All;
+  showEntries();
+});
+
+showBtns[1].addEventListener("click", () => {
+  show = showSelection.Unarchived;
+  showEntries();
+});
+
+showBtns[2].addEventListener("click", () => {
+  show = showSelection.Archived;
+  showEntries();
+});
+
 enum sortSelectionf {
   D,
   A,
@@ -116,42 +155,42 @@ sortfBtns[1].addEventListener("click", () => {
   sortPhotos();
 });
 
-enum showSelection {
+enum showSelectionf {
   all,
   Jahs_Vision,
   _1,
 }
 
-let show: showSelection = showSelection.all;
+let showf: showSelectionf = showSelectionf.all;
 
-const showBtns = Array.from(document.getElementsByClassName("show-select"));
+const showfBtns = Array.from(document.getElementsByClassName("show-selectf"));
 
-function showHighlightShown(num: number): void {
-  for (let btn of showBtns) {
-    btn.className = "sort-select";
+function showHighlightShownf(num: number): void {
+  for (let btn of showfBtns) {
+    btn.className = "show-selectf";
   }
 
-  showBtns[num].className = "show-select selected";
+  showfBtns[num].className = "show-selectf selected";
 }
 
-for (let i = 0; i < showBtns.length; i++) {
-  showBtns[i].addEventListener("click", () => {
-    showHighlightShown(i);
+for (let i = 0; i < showfBtns.length; i++) {
+  showfBtns[i].addEventListener("click", () => {
+    showHighlightShownf(i);
   });
 }
 
-showBtns[0].addEventListener("click", () => {
-  show = showSelection.all;
+showfBtns[0].addEventListener("click", () => {
+  showf = showSelectionf.all;
   showPhotos();
 });
 
-showBtns[1].addEventListener("click", () => {
-  show = showSelection._1;
+showfBtns[1].addEventListener("click", () => {
+  showf = showSelectionf._1;
   showPhotos();
 });
 
-showBtns[2].addEventListener("click", () => {
-  show = showSelection.Jahs_Vision;
+showfBtns[2].addEventListener("click", () => {
+  showf = showSelectionf.Jahs_Vision;
   showPhotos();
 });
 
@@ -173,11 +212,13 @@ sections[0].innerHTML = `
 `;
 
 abstract class entry {
+  archive: boolean;
   img: string;
   name: string;
   download: string;
 
-  constructor(img: string, name: string, download: string) {
+  constructor(archive: boolean, img: string, name: string, download: string) {
+    this.archive = archive;
     this.img = img;
     this.name = name;
     this.download = download;
@@ -189,8 +230,8 @@ abstract class entry {
 class doc extends entry {
   tags: string[];
 
-  constructor(icon: string, name: string, tags: string[], download: string) {
-    super(icon, name, download);
+  constructor(archive: boolean, icon: string, name: string, tags: string[], download: string) {
+    super(archive, icon, name, download);
     this.tags = tags;
   }
 
@@ -223,12 +264,14 @@ class doc extends entry {
 }
 
 const fioDocs: doc = new doc(
+  false,
   "fio",
   "File In Out",
   ["Module", "Lua", "Files"],
   "FIO.pdf"
 );
 
+let docs: doc[] = [fioDocs];
 let docEntries: doc[];
 
 class proj extends entry {
@@ -238,6 +281,7 @@ class proj extends entry {
   game: boolean;
 
   constructor(
+    archive: boolean,
     icon: string,
     name: string,
     version: string,
@@ -246,7 +290,7 @@ class proj extends entry {
     bio: string,
     game: boolean = false
   ) {
-    super(icon, name, download);
+    super(archive, icon, name, download);
     this.version = version;
     this.lang = lang;
     this.bio = bio;
@@ -281,6 +325,7 @@ class proj extends entry {
 }
 
 const taskuu: proj = new proj(
+  true,
   "taskbuddy",
   "Taskuu",
   "1.1.0",
@@ -291,6 +336,7 @@ project and was my sign to stay away from Javascript and web development.`
 );
 
 const fileInOut: proj = new proj(
+  false,
   "fio",
   "File In Out",
   "1.0.0",
@@ -302,6 +348,7 @@ It was my first module I ever made.`
 );
 
 const schizle: proj = new proj(
+  false,
   "SchizleLogo",
   "Schizle",
   "a-0.5.0",
@@ -311,6 +358,7 @@ const schizle: proj = new proj(
 );
 
 const wiced: proj = new proj(
+  true,
   "wic",
   "Wiced",
   "1.0.0",
@@ -320,6 +368,7 @@ const wiced: proj = new proj(
 );
 
 const preprepake: proj = new proj(
+  false,
   "2pake",
   "2pake",
   "1.0.0",
@@ -331,6 +380,7 @@ unfamilier with build systems like make. So, prepremake makes this easy and does
 );
 
 const CompleteC: proj = new proj(
+  false,
   "CompleteC",
   "CompleteC",
   "1.0.0",
@@ -341,9 +391,11 @@ of the language. It is not meant to make C into a scripting language, just remov
 types of structs and functions everytime a new project is started in a modular style.`
 );
 
+let projs: proj[] = [CompleteC, preprepake, wiced, schizle, fileInOut, taskuu];
 let projEntries: proj[];
 
 const alienImmigration: proj = new proj(
+  true,
   "alienimmigration",
   "Alien Imm...",
   "1.4.0",
@@ -354,12 +406,13 @@ Alien Immigration was my introduction to C#.`,
   true
 );
 
+let games: proj[] = [alienImmigration];
 let gameEntries: proj[];
 
 class foto extends entry {
   constructor(img: string, name: string) {
     let download: string = img.slice(-4);
-    super(img, name, download);
+    super(false, img, name, download);
   }
 
   stringify(): string {
@@ -379,12 +432,11 @@ class foto extends entry {
 }
 
 //render sorts
-(sortBtns[0] as any).click();
+// (sortBtns[0] as any).click();
+(showBtns[1] as any).click();
 
 function sortEntries(): void {
-  docEntries = [fioDocs];
-  projEntries = [CompleteC, preprepake, wiced, schizle, fileInOut, taskuu];
-  gameEntries = [alienImmigration];
+  showEntries(); 
 
   sections[1].innerHTML = "";
   sections[2].innerHTML = "";
@@ -392,30 +444,28 @@ function sortEntries(): void {
 
   switch (sort) {
     case sortSelection.dateD:
-      renderEntries();
       break;
 
     case sortSelection.dateA:
       docEntries.reverse();
       projEntries.reverse();
       gameEntries.reverse();
-      renderEntries();
       break;
 
     case sortSelection.AZ:
       docEntries.sort((a, b) => a.name.localeCompare(b.name));
       projEntries.sort((a, b) => a.name.localeCompare(b.name));
       gameEntries.sort((a, b) => a.name.localeCompare(b.name));
-      renderEntries();
       break;
 
     case sortSelection.ZA:
       docEntries.sort((b, a) => a.name.localeCompare(b.name));
       projEntries.sort((b, a) => a.name.localeCompare(b.name));
       gameEntries.sort((b, a) => a.name.localeCompare(b.name));
-      renderEntries();
       break;
   }
+
+  renderEntries();
 
   let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
 
@@ -424,6 +474,68 @@ function sortEntries(): void {
       expand(btn);
     });
   }
+}
+
+function showEntries(): void {
+  sections[1].innerHTML = "";
+  sections[2].innerHTML = "";
+  sections[3].innerHTML = "";
+
+  switch (show) {
+    case showSelection.Unarchived:
+      docEntries = [];
+      for (let doc of docs) {
+        if (!(doc.archive)) {
+          docEntries.push(doc);
+        }
+      }
+
+      projEntries = [];
+      for (let proj of projs) {
+        if (!(proj.archive)) {
+          projEntries.push(proj);
+        }
+      }
+
+      gameEntries = [];
+      for (let game of games) {
+        if (!(game.archive)) {
+          gameEntries.push(game);
+        }
+      }
+      break;
+
+    case showSelection.Archived:
+      docEntries = [];
+      for (let doc of docs) {
+        if (doc.archive) {
+          docEntries.push(doc);
+        }
+      }
+
+      projEntries = [];
+      for (let proj of projs) {
+        if (proj.archive) {
+          projEntries.push(proj);
+        }
+      }
+
+      gameEntries = [];
+      for (let game of games) {
+        if (game.archive) {
+          gameEntries.push(game);
+        }
+      }
+      break;
+
+    case showSelection.All:
+      docEntries = docs;
+      projEntries = projs;
+      gameEntries = games;
+      break;
+  }
+
+  renderEntries();
 }
 
 function renderEntries(): void {
@@ -482,16 +594,16 @@ function sortPhotos(): void {
 function showPhotos(): void {
   sections[4].innerHTML = "";
 
-  switch (show) {
-    case showSelection.all:
+  switch (showf) {
+    case showSelectionf.all:
       renderCollections(collectionNames, collections);
       break;
 
-    case showSelection.Jahs_Vision:
+    case showSelectionf.Jahs_Vision:
       renderCollections(["Jah's Vision"], [jahsVision]);
       break;
 
-    case showSelection._1:
+    case showSelectionf._1:
       renderCollections(["Untitled #1"], [untitled1]);
       break;
   }
@@ -510,7 +622,7 @@ function renderCollections(names: string[], collections: foto[][]): void {
 }
 
 (sortfBtns[0] as any).click();
-(showBtns[0] as any).click();
+(showfBtns[0] as any).click();
 //expansion
 
 function expand(e: any): void {

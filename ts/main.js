@@ -37,7 +37,7 @@ function showHighlightTitleBar(num) {
         var header = headers_1[_i];
         header.className = "select";
     }
-    headers[num].className = "select selected";
+    headers[num].className = "select selected-header";
 }
 var _loop_1 = function (i) {
     headers[i].addEventListener("click", function () {
@@ -89,6 +89,41 @@ sortBtns[3].addEventListener("click", function () {
     sort = sortSelection.ZA;
     sortEntries();
 });
+var showSelection;
+(function (showSelection) {
+    showSelection[showSelection["All"] = 0] = "All";
+    showSelection[showSelection["Unarchived"] = 1] = "Unarchived";
+    showSelection[showSelection["Archived"] = 2] = "Archived";
+})(showSelection || (showSelection = {}));
+var show = showSelection.Unarchived;
+var showBtns = Array.from(document.getElementsByClassName("show-select"));
+function showHighlightShown(num) {
+    for (var _i = 0, showBtns_1 = showBtns; _i < showBtns_1.length; _i++) {
+        var btn = showBtns_1[_i];
+        btn.className = "show-select";
+    }
+    showBtns[num].className = "show-select selected";
+}
+var _loop_3 = function (i) {
+    showBtns[i].addEventListener("click", function () {
+        showHighlightShown(i);
+    });
+};
+for (var i = 0; i < showBtns.length; i++) {
+    _loop_3(i);
+}
+showBtns[0].addEventListener("click", function () {
+    show = showSelection.All;
+    showEntries();
+});
+showBtns[1].addEventListener("click", function () {
+    show = showSelection.Unarchived;
+    showEntries();
+});
+showBtns[2].addEventListener("click", function () {
+    show = showSelection.Archived;
+    showEntries();
+});
 var sortSelectionf;
 (function (sortSelectionf) {
     sortSelectionf[sortSelectionf["D"] = 0] = "D";
@@ -103,13 +138,13 @@ function showHighlightSortf(num) {
     }
     sortfBtns[num].className = "sort-selectf selected";
 }
-var _loop_3 = function (i) {
+var _loop_4 = function (i) {
     sortfBtns[i].addEventListener("click", function () {
         showHighlightSortf(i);
     });
 };
 for (var i = 0; i < sortfBtns.length; i++) {
-    _loop_3(i);
+    _loop_4(i);
 }
 sortfBtns[0].addEventListener("click", function () {
     sortf = sortSelectionf.D;
@@ -119,45 +154,46 @@ sortfBtns[1].addEventListener("click", function () {
     sortf = sortSelectionf.A;
     sortPhotos();
 });
-var showSelection;
-(function (showSelection) {
-    showSelection[showSelection["all"] = 0] = "all";
-    showSelection[showSelection["Jahs_Vision"] = 1] = "Jahs_Vision";
-    showSelection[showSelection["_1"] = 2] = "_1";
-})(showSelection || (showSelection = {}));
-var show = showSelection.all;
-var showBtns = Array.from(document.getElementsByClassName("show-select"));
-function showHighlightShown(num) {
-    for (var _i = 0, showBtns_1 = showBtns; _i < showBtns_1.length; _i++) {
-        var btn = showBtns_1[_i];
-        btn.className = "sort-select";
+var showSelectionf;
+(function (showSelectionf) {
+    showSelectionf[showSelectionf["all"] = 0] = "all";
+    showSelectionf[showSelectionf["Jahs_Vision"] = 1] = "Jahs_Vision";
+    showSelectionf[showSelectionf["_1"] = 2] = "_1";
+})(showSelectionf || (showSelectionf = {}));
+var showf = showSelectionf.all;
+var showfBtns = Array.from(document.getElementsByClassName("show-selectf"));
+function showHighlightShownf(num) {
+    for (var _i = 0, showfBtns_1 = showfBtns; _i < showfBtns_1.length; _i++) {
+        var btn = showfBtns_1[_i];
+        btn.className = "show-selectf";
     }
-    showBtns[num].className = "show-select selected";
+    showfBtns[num].className = "show-selectf selected";
 }
-var _loop_4 = function (i) {
-    showBtns[i].addEventListener("click", function () {
-        showHighlightShown(i);
+var _loop_5 = function (i) {
+    showfBtns[i].addEventListener("click", function () {
+        showHighlightShownf(i);
     });
 };
-for (var i = 0; i < showBtns.length; i++) {
-    _loop_4(i);
+for (var i = 0; i < showfBtns.length; i++) {
+    _loop_5(i);
 }
-showBtns[0].addEventListener("click", function () {
-    show = showSelection.all;
+showfBtns[0].addEventListener("click", function () {
+    showf = showSelectionf.all;
     showPhotos();
 });
-showBtns[1].addEventListener("click", function () {
-    show = showSelection._1;
+showfBtns[1].addEventListener("click", function () {
+    showf = showSelectionf._1;
     showPhotos();
 });
-showBtns[2].addEventListener("click", function () {
-    show = showSelection.Jahs_Vision;
+showfBtns[2].addEventListener("click", function () {
+    showf = showSelectionf.Jahs_Vision;
     showPhotos();
 });
 // filling content
 sections[0].innerHTML = "\n            <h2>\n                \"Who taught you to hate yourself from the top of your head to the soles of your feet? Who taught you to\n                hate your own kind? Who taught you to hate the race that you belong to so much so that you don\u2019t want to\n                be around each other? No, before you come asking Mr. Muhammad does he teach hate, you should ask\n                yourself who taught you to hate being what God gave you. I\u2019m not standing here speaking to you as an\n                American, or a patriot, or a flag-saluter, or a flag-waver\u2014no, not I. I\u2019m speaking as a victim of this\n                American system. And I see America through the eyes of the victim. I don\u2019t see any American dream; I see\n                an American nightmare. We need to wake up, clean up, and stand up. We need to get up off of our knees\n                and stop begging for an equal share in someone else's power structure. We need to build our own power,\n                and let the world know that we are ready to stand tall, as men and women, and take charge of our own\n                destiny. No longer will we allow ourselves to be disrespected, unprotected, and neglected.\"\n            </h2>\n";
 var entry = /** @class */ (function () {
-    function entry(img, name, download) {
+    function entry(archive, img, name, download) {
+        this.archive = archive;
         this.img = img;
         this.name = name;
         this.download = download;
@@ -166,8 +202,8 @@ var entry = /** @class */ (function () {
 }());
 var doc = /** @class */ (function (_super) {
     __extends(doc, _super);
-    function doc(icon, name, tags, download) {
-        var _this = _super.call(this, icon, name, download) || this;
+    function doc(archive, icon, name, tags, download) {
+        var _this = _super.call(this, archive, icon, name, download) || this;
         _this.tags = tags;
         return _this;
     }
@@ -181,13 +217,14 @@ var doc = /** @class */ (function (_super) {
     };
     return doc;
 }(entry));
-var fioDocs = new doc("fio", "File In Out", ["Module", "Lua", "Files"], "FIO.pdf");
+var fioDocs = new doc(false, "fio", "File In Out", ["Module", "Lua", "Files"], "FIO.pdf");
+var docs = [fioDocs];
 var docEntries;
 var proj = /** @class */ (function (_super) {
     __extends(proj, _super);
-    function proj(icon, name, version, lang, download, bio, game) {
+    function proj(archive, icon, name, version, lang, download, bio, game) {
         if (game === void 0) { game = false; }
-        var _this = _super.call(this, icon, name, download) || this;
+        var _this = _super.call(this, archive, icon, name, download) || this;
         _this.version = version;
         _this.lang = lang;
         _this.bio = bio;
@@ -200,20 +237,22 @@ var proj = /** @class */ (function (_super) {
     };
     return proj;
 }(entry));
-var taskuu = new proj("taskbuddy", "Taskuu", "1.1.0", "Javascript", "download/Taskuu.Setup.exe", "Taskbuddy is a task-keeping app built using electronJS. It was my first \"real\" Javascript \nproject and was my sign to stay away from Javascript and web development.");
-var fileInOut = new proj("fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
-var schizle = new proj("SchizleLogo", "Schizle", "a-0.5.0", "C", "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha", "Schizle is a very simple scripting language I made with C and premake.");
-var wiced = new proj("wic", "Wiced", "1.0.0", "Python, Cython", "download/wic", "What is my computer even doing is a light curses-based linux performance monitor.");
-var preprepake = new proj("2pake", "2pake", "1.0.0", "Lua", "download/2pake", "2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 \nmakes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers \nunfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.");
-var CompleteC = new proj("CompleteC", "CompleteC", "1.0.0", "C", "download/include.zip", "I made complete C to make C feel more complete and batteries include while still remaining true to the style \nof the language. It is not meant to make C into a scripting language, just remove the need to make the same \ntypes of structs and functions everytime a new project is started in a modular style.");
+var taskuu = new proj(true, "taskbuddy", "Taskuu", "1.1.0", "Javascript", "download/Taskuu.Setup.exe", "Taskbuddy is a task-keeping app built using electronJS. It was my first \"real\" Javascript \nproject and was my sign to stay away from Javascript and web development.");
+var fileInOut = new proj(false, "fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
+var schizle = new proj(false, "SchizleLogo", "Schizle", "a-0.5.0", "C", "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha", "Schizle is a very simple scripting language I made with C and premake.");
+var wiced = new proj(true, "wic", "Wiced", "1.0.0", "Python, Cython", "download/wic", "What is my computer even doing is a light curses-based linux performance monitor.");
+var preprepake = new proj(false, "2pake", "2pake", "1.0.0", "Lua", "download/2pake", "2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 \nmakes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers \nunfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.");
+var CompleteC = new proj(false, "CompleteC", "CompleteC", "1.0.0", "C", "download/include.zip", "I made complete C to make C feel more complete and batteries include while still remaining true to the style \nof the language. It is not meant to make C into a scripting language, just remove the need to make the same \ntypes of structs and functions everytime a new project is started in a modular style.");
+var projs = [CompleteC, preprepake, wiced, schizle, fileInOut, taskuu];
 var projEntries;
-var alienImmigration = new proj("alienimmigration", "Alien Imm...", "1.4.0", "XNA", "download/alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.", true);
+var alienImmigration = new proj(true, "alienimmigration", "Alien Imm...", "1.4.0", "XNA", "download/alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.", true);
+var games = [alienImmigration];
 var gameEntries;
 var foto = /** @class */ (function (_super) {
     __extends(foto, _super);
     function foto(img, name) {
         var download = img.slice(-4);
-        return _super.call(this, img, name, download) || this;
+        return _super.call(this, false, img, name, download) || this;
     }
     foto.prototype.stringify = function () {
         var e = "\n            <div class=\"photo-entry\">\n                <img class=\"photo\" src=\"img/photography/100_".concat(this.img, ".JPG\">\n                <h1 class=\"photo-info\">\n                    <span class=\"photo-date\">").concat(this.name, "</span>\n                </h1>\n                <a href=\"img/photography/100_").concat(this.img, ".JPG\" download=\"").concat(this.download, ".JPG\">\n                    <img class=\"download-icon photo-icon\" src=\"img/download.png\">\n                </a>\n            </div>");
@@ -222,47 +261,102 @@ var foto = /** @class */ (function (_super) {
     return foto;
 }(entry));
 //render sorts
-sortBtns[0].click();
+// (sortBtns[0] as any).click();
+showBtns[1].click();
 function sortEntries() {
-    docEntries = [fioDocs];
-    projEntries = [CompleteC, preprepake, wiced, schizle, fileInOut, taskuu];
-    gameEntries = [alienImmigration];
+    showEntries();
     sections[1].innerHTML = "";
     sections[2].innerHTML = "";
     sections[3].innerHTML = "";
     switch (sort) {
         case sortSelection.dateD:
-            renderEntries();
             break;
         case sortSelection.dateA:
             docEntries.reverse();
             projEntries.reverse();
             gameEntries.reverse();
-            renderEntries();
             break;
         case sortSelection.AZ:
             docEntries.sort(function (a, b) { return a.name.localeCompare(b.name); });
             projEntries.sort(function (a, b) { return a.name.localeCompare(b.name); });
             gameEntries.sort(function (a, b) { return a.name.localeCompare(b.name); });
-            renderEntries();
             break;
         case sortSelection.ZA:
             docEntries.sort(function (b, a) { return a.name.localeCompare(b.name); });
             projEntries.sort(function (b, a) { return a.name.localeCompare(b.name); });
             gameEntries.sort(function (b, a) { return a.name.localeCompare(b.name); });
-            renderEntries();
             break;
     }
+    renderEntries();
     var expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
-    var _loop_5 = function (btn) {
+    var _loop_6 = function (btn) {
         btn.addEventListener("click", function () {
             expand(btn);
         });
     };
     for (var _i = 0, expandBtns_1 = expandBtns; _i < expandBtns_1.length; _i++) {
         var btn = expandBtns_1[_i];
-        _loop_5(btn);
+        _loop_6(btn);
     }
+}
+function showEntries() {
+    sections[1].innerHTML = "";
+    sections[2].innerHTML = "";
+    sections[3].innerHTML = "";
+    switch (show) {
+        case showSelection.Unarchived:
+            docEntries = [];
+            for (var _i = 0, docs_1 = docs; _i < docs_1.length; _i++) {
+                var doc_1 = docs_1[_i];
+                if (!(doc_1.archive)) {
+                    docEntries.push(doc_1);
+                }
+            }
+            projEntries = [];
+            for (var _a = 0, projs_1 = projs; _a < projs_1.length; _a++) {
+                var proj_1 = projs_1[_a];
+                if (!(proj_1.archive)) {
+                    projEntries.push(proj_1);
+                }
+            }
+            gameEntries = [];
+            for (var _b = 0, games_1 = games; _b < games_1.length; _b++) {
+                var game = games_1[_b];
+                if (!(game.archive)) {
+                    gameEntries.push(game);
+                }
+            }
+            break;
+        case showSelection.Archived:
+            docEntries = [];
+            for (var _c = 0, docs_2 = docs; _c < docs_2.length; _c++) {
+                var doc_2 = docs_2[_c];
+                if (doc_2.archive) {
+                    docEntries.push(doc_2);
+                }
+            }
+            projEntries = [];
+            for (var _d = 0, projs_2 = projs; _d < projs_2.length; _d++) {
+                var proj_2 = projs_2[_d];
+                if (proj_2.archive) {
+                    projEntries.push(proj_2);
+                }
+            }
+            gameEntries = [];
+            for (var _e = 0, games_2 = games; _e < games_2.length; _e++) {
+                var game = games_2[_e];
+                if (game.archive) {
+                    gameEntries.push(game);
+                }
+            }
+            break;
+        case showSelection.All:
+            docEntries = docs;
+            projEntries = projs;
+            gameEntries = games;
+            break;
+    }
+    renderEntries();
 }
 function renderEntries() {
     docEntries.forEach(function (entryArg) {
@@ -313,14 +407,14 @@ function sortPhotos() {
 }
 function showPhotos() {
     sections[4].innerHTML = "";
-    switch (show) {
-        case showSelection.all:
+    switch (showf) {
+        case showSelectionf.all:
             renderCollections(collectionNames, collections);
             break;
-        case showSelection.Jahs_Vision:
+        case showSelectionf.Jahs_Vision:
             renderCollections(["Jah's Vision"], [jahsVision]);
             break;
-        case showSelection._1:
+        case showSelectionf._1:
             renderCollections(["Untitled #1"], [untitled1]);
             break;
     }
@@ -339,7 +433,7 @@ function renderCollections(names, collections) {
     }
 }
 sortfBtns[0].click();
-showBtns[0].click();
+showfBtns[0].click();
 //expansion
 function expand(e) {
     if (e.classList.contains("expanded")) {

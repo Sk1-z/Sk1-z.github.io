@@ -50,23 +50,30 @@
   border: none;
 }
 
-.selected {
+.selected-header {
   color: var(--accent);
 }
 
+.selected {
+  color: var(--secondaryC);
+}
+
 #sidebar {
-  background-color: var(--primary);
+  background-color: var(--accent);
   position: absolute;
-  width: 21vw;
-  left: 0.5vw;
-  top: 12.5vh;
+  width: 30vw;
+  left: 1vw;
+  top: 10vh;
   border-radius: 4vh;
   padding: 1vw;
+  box-shadow: 0 0 14px var(--accent), 0 0 18px var(--accent),
+    0 0 30px var(--accent);
 }
 
 .sort-select,
 .sort-selectf,
-.show-select {
+.show-select,
+.show-selectf {
   padding: 0.2vw;
   margin: 0;
   cursor: pointer;
@@ -74,7 +81,8 @@
 
 .sort-select:hover,
 .sort-selectf:hover,
-.show-select:hover {
+.show-select:hover,
+.show-selectf:hover {
   text-decoration: underline;
 }
 
