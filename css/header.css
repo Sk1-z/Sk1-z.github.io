@@ -59,10 +59,12 @@
 }
 
 #sidebar {
+  z-index: 1;
+  justify-content: space-between;
   background-color: var(--accent);
   position: absolute;
-  width: 30vw;
-  left: 1vw;
+  width: 40vw;
+  left: 30vw;
   top: 10vh;
   border-radius: 4vh;
   padding: 1vw;

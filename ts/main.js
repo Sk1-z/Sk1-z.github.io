@@ -17,7 +17,7 @@ var __extends = (this && this.__extends) || (function () {
 document.getElementById("opts-button-icon").addEventListener("click", function () {
     var sidebar = document.getElementById("sidebar");
     if (sidebar.style.display === "none") {
-        sidebar.style.display = "block";
+        sidebar.style.display = "flex";
     }
     else {
         sidebar.style.display = "none";
@@ -240,10 +240,18 @@ var proj = /** @class */ (function (_super) {
 var taskuu = new proj(true, "taskbuddy", "Taskuu", "1.1.0", "Javascript", "download/Taskuu.Setup.exe", "Taskbuddy is a task-keeping app built using electronJS. It was my first \"real\" Javascript \nproject and was my sign to stay away from Javascript and web development.");
 var fileInOut = new proj(false, "fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
 var schizle = new proj(false, "SchizleLogo", "Schizle", "a-0.5.0", "C", "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha", "Schizle is a very simple scripting language I made with C and premake.");
-var wiced = new proj(true, "wic", "Wiced", "1.0.0", "Python, Cython", "download/wic", "What is my computer even doing is a light curses-based linux performance monitor.");
+// const wiced: proj = new proj(
+//   true,
+//   "wic",
+//   "Wiced",
+//   "1.0.0",
+//   "Python",
+//   "download/wic",
+//   "What is my computer even doing is a light curses-based linux performance monitor."
+// );
 var preprepake = new proj(false, "2pake", "2pake", "1.0.0", "Lua", "download/2pake", "2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 \nmakes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers \nunfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.");
 var CompleteC = new proj(false, "CompleteC", "CompleteC", "1.0.0", "C", "download/include.zip", "I made complete C to make C feel more complete and batteries include while still remaining true to the style \nof the language. It is not meant to make C into a scripting language, just remove the need to make the same \ntypes of structs and functions everytime a new project is started in a modular style.");
-var projs = [CompleteC, preprepake, wiced, schizle, fileInOut, taskuu];
+var projs = [CompleteC, preprepake, schizle, fileInOut, taskuu];
 var projEntries;
 var alienImmigration = new proj(true, "alienimmigration", "Alien Imm...", "1.4.0", "XNA", "download/alienimmigration.zip", "Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.\nAlien Immigration was my introduction to C#.", true);
 var games = [alienImmigration];
@@ -288,16 +296,6 @@ function sortEntries() {
             break;
     }
     renderEntries();
-    var expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
-    var _loop_6 = function (btn) {
-        btn.addEventListener("click", function () {
-            expand(btn);
-        });
-    };
-    for (var _i = 0, expandBtns_1 = expandBtns; _i < expandBtns_1.length; _i++) {
-        var btn = expandBtns_1[_i];
-        _loop_6(btn);
-    }
 }
 function showEntries() {
     sections[1].innerHTML = "";
@@ -444,4 +442,14 @@ function expand(e) {
         e.className += " expanded";
         e.nextElementSibling.nextElementSibling.style.display = "block";
     }
+}
+var expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
+var _loop_6 = function (btn) {
+    btn.addEventListener("click", function () {
+        expand(btn);
+    });
+};
+for (var _i = 0, expandBtns_1 = expandBtns; _i < expandBtns_1.length; _i++) {
+    var btn = expandBtns_1[_i];
+    _loop_6(btn);
 }

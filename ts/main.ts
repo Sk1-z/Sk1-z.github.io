@@ -4,7 +4,7 @@ document.getElementById("opts-button-icon")!.addEventListener("click", () => {
     "sidebar"
   ) as HTMLDivElement;
   if (sidebar.style.display === "none") {
-    sidebar.style.display = "block";
+    sidebar.style.display = "flex";
   } else {
     sidebar.style.display = "none";
   }
@@ -357,15 +357,15 @@ const schizle: proj = new proj(
   "Schizle is a very simple scripting language I made with C and premake."
 );
 
-const wiced: proj = new proj(
-  true,
-  "wic",
-  "Wiced",
-  "1.0.0",
-  "Python, Cython",
-  "download/wic",
-  "What is my computer even doing is a light curses-based linux performance monitor."
-);
+// const wiced: proj = new proj(
+//   true,
+//   "wic",
+//   "Wiced",
+//   "1.0.0",
+//   "Python",
+//   "download/wic",
+//   "What is my computer even doing is a light curses-based linux performance monitor."
+// );
 
 const preprepake: proj = new proj(
   false,
@@ -391,7 +391,7 @@ of the language. It is not meant to make C into a scripting language, just remov
 types of structs and functions everytime a new project is started in a modular style.`
 );
 
-let projs: proj[] = [CompleteC, preprepake, wiced, schizle, fileInOut, taskuu];
+let projs: proj[] = [CompleteC, preprepake,  schizle, fileInOut, taskuu];
 let projEntries: proj[];
 
 const alienImmigration: proj = new proj(
@@ -466,14 +466,6 @@ function sortEntries(): void {
   }
 
   renderEntries();
-
-  let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
-
-  for (let btn of expandBtns) {
-    btn.addEventListener("click", () => {
-      expand(btn);
-    });
-  }
 }
 
 function showEntries(): void {
@@ -634,3 +626,12 @@ function expand(e: any): void {
     e.nextElementSibling!.nextElementSibling!.style.display = "block";
   }
 }
+
+let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
+
+for (let btn of expandBtns) {
+  btn.addEventListener("click", () => {
+    expand(btn);
+  });
+}
+

@@ -49,13 +49,34 @@
   color: var(--accent);
 }
 
+.entry-tag {
+  position: relative;
+  left: 2vw;
+  margin-top: 1vh;
+  background-color: var(--accent);
+  padding: 1vh;
+  margin-right: 1vh;
+  border-radius: 2vh;
+  width: fit-content;
+  float: left;
+}
+
+.view-icon {
+  width: 6vh;
+  height: 6vh;
+  cursor: pointer;
+  float: right;
+  position: relative;
+  top: 12.5vh;
+}
+
 .download-icon {
   width: 6vh;
   height: 6vh;
   cursor: pointer;
   float: right;
   position: relative;
-  right: 10vh;
+  right: 6vh;
   top: 2.5vh;
 }
 
@@ -65,7 +86,6 @@
   cursor: pointer;
   float: right;
   position: relative;
-  right: 4vh;
   top: 12.5vh;
 }
 
