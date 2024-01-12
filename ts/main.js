@@ -296,6 +296,16 @@ function sortEntries() {
             break;
     }
     renderEntries();
+    var expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
+    var _loop_7 = function (btn) {
+        btn.addEventListener("click", function () {
+            expand(btn);
+        });
+    };
+    for (var _i = 0, expandBtns_2 = expandBtns; _i < expandBtns_2.length; _i++) {
+        var btn = expandBtns_2[_i];
+        _loop_7(btn);
+    }
 }
 function showEntries() {
     sections[1].innerHTML = "";

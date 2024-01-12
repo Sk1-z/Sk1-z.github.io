@@ -466,6 +466,14 @@ function sortEntries(): void {
   }
 
   renderEntries();
+
+  let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
+
+  for (let btn of expandBtns) {
+    btn.addEventListener("click", () => {
+      expand(btn);
+    });
+  }
 }
 
 function showEntries(): void {
@@ -629,9 +637,8 @@ function expand(e: any): void {
 
 let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
 
-for (let btn of expandBtns) {
-  btn.addEventListener("click", () => {
-    expand(btn);
-  });
-}
-
+  for (let btn of expandBtns) {
+    btn.addEventListener("click", () => {
+      expand(btn);
+    });
+  }
