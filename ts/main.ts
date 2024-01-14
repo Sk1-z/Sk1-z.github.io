@@ -1,48 +1,48 @@
 //header
 document.getElementById("opts-button-icon")!.addEventListener("click", () => {
-  let sidebar: HTMLDivElement = document.getElementById(
-    "sidebar"
-  ) as HTMLDivElement;
-  if (sidebar.style.display === "none") {
-    sidebar.style.display = "flex";
-  } else {
-    sidebar.style.display = "none";
-  }
+    let sidebar: HTMLDivElement = document.getElementById(
+        "sidebar"
+    ) as HTMLDivElement;
+    if (sidebar.style.display === "none") {
+        sidebar.style.display = "flex";
+    } else {
+        sidebar.style.display = "none";
+    }
 });
 
 const headers = document.getElementsByClassName("select");
 const sections = document.getElementsByClassName("content") as any;
 
 function showSection(num: number): void {
-  for (let section of sections) {
-    section.style.display = "none";
-  }
+    for (let section of sections) {
+        section.style.display = "none";
+    }
 
-  sections[num].style.display = "block";
+    sections[num].style.display = "block";
 }
 
 function showHighlightTitleBar(num: number): void {
-  for (let header of headers) {
-    header.className = "select";
-  }
+    for (let header of headers) {
+        header.className = "select";
+    }
 
-  headers[num].className = "select selected-header";
+    headers[num].className = "select selected-header";
 }
 
 for (let i = 0; i < headers.length; i++) {
-  headers[i].addEventListener("click", () => {
-    showSection(i);
-    showHighlightTitleBar(i);
-  });
+    headers[i].addEventListener("click", () => {
+        showSection(i);
+        showHighlightTitleBar(i);
+    });
 }
 
 //sort
 
 enum sortSelection {
-  dateD,
-  dateA,
-  AZ,
-  ZA,
+    dateD,
+    dateA,
+    AZ,
+    ZA,
 }
 
 let sort: sortSelection = sortSelection.dateD;
@@ -50,43 +50,43 @@ let sort: sortSelection = sortSelection.dateD;
 const sortBtns = Array.from(document.getElementsByClassName("sort-select"));
 
 function showHighlightSort(num: number): void {
-  for (let btn of sortBtns) {
-    btn.className = "sort-select";
-  }
+    for (let btn of sortBtns) {
+        btn.className = "sort-select";
+    }
 
-  sortBtns[num].className = "sort-select selected";
+    sortBtns[num].className = "sort-select selected";
 }
 
 for (let i = 0; i < sortBtns.length; i++) {
-  sortBtns[i].addEventListener("click", () => {
-    showHighlightSort(i);
-  });
+    sortBtns[i].addEventListener("click", () => {
+        showHighlightSort(i);
+    });
 }
 
 sortBtns[0].addEventListener("click", () => {
-  sort = sortSelection.dateD;
-  sortEntries();
+    sort = sortSelection.dateD;
+    sortEntries();
 });
 
 sortBtns[1].addEventListener("click", () => {
-  sort = sortSelection.dateA;
-  sortEntries();
+    sort = sortSelection.dateA;
+    sortEntries();
 });
 
 sortBtns[2].addEventListener("click", () => {
-  sort = sortSelection.AZ;
-  sortEntries();
+    sort = sortSelection.AZ;
+    sortEntries();
 });
 
 sortBtns[3].addEventListener("click", () => {
-  sort = sortSelection.ZA;
-  sortEntries();
+    sort = sortSelection.ZA;
+    sortEntries();
 });
 
 enum showSelection {
-  All,
-  Unarchived,
-  Archived,
+    All,
+    Unarchived,
+    Archived,
 }
 
 let show: showSelection = showSelection.Unarchived;
@@ -94,37 +94,37 @@ let show: showSelection = showSelection.Unarchived;
 const showBtns = Array.from(document.getElementsByClassName("show-select"));
 
 function showHighlightShown(num: number): void {
-  for (let btn of showBtns) {
-    btn.className = "show-select";
-  }
+    for (let btn of showBtns) {
+        btn.className = "show-select";
+    }
 
-  showBtns[num].className = "show-select selected";
+    showBtns[num].className = "show-select selected";
 }
 
 for (let i = 0; i < showBtns.length; i++) {
-  showBtns[i].addEventListener("click", () => {
-    showHighlightShown(i);
-  });
+    showBtns[i].addEventListener("click", () => {
+        showHighlightShown(i);
+    });
 }
 
 showBtns[0].addEventListener("click", () => {
-  show = showSelection.All;
-  showEntries();
+    show = showSelection.All;
+    showEntries();
 });
 
 showBtns[1].addEventListener("click", () => {
-  show = showSelection.Unarchived;
-  showEntries();
+    show = showSelection.Unarchived;
+    showEntries();
 });
 
 showBtns[2].addEventListener("click", () => {
-  show = showSelection.Archived;
-  showEntries();
+    show = showSelection.Archived;
+    showEntries();
 });
 
 enum sortSelectionf {
-  D,
-  A,
+    D,
+    A,
 }
 
 let sortf: sortSelectionf = sortSelectionf.A;
@@ -132,33 +132,33 @@ let sortf: sortSelectionf = sortSelectionf.A;
 const sortfBtns = Array.from(document.getElementsByClassName("sort-selectf"));
 
 function showHighlightSortf(num: number): void {
-  for (let btn of sortfBtns) {
-    btn.className = "sort-selectf";
-  }
+    for (let btn of sortfBtns) {
+        btn.className = "sort-selectf";
+    }
 
-  sortfBtns[num].className = "sort-selectf selected";
+    sortfBtns[num].className = "sort-selectf selected";
 }
 
 for (let i = 0; i < sortfBtns.length; i++) {
-  sortfBtns[i].addEventListener("click", () => {
-    showHighlightSortf(i);
-  });
+    sortfBtns[i].addEventListener("click", () => {
+        showHighlightSortf(i);
+    });
 }
 
 sortfBtns[0].addEventListener("click", () => {
-  sortf = sortSelectionf.D;
-  sortPhotos();
+    sortf = sortSelectionf.D;
+    sortPhotos();
 });
 
 sortfBtns[1].addEventListener("click", () => {
-  sortf = sortSelectionf.A;
-  sortPhotos();
+    sortf = sortSelectionf.A;
+    sortPhotos();
 });
 
 enum showSelectionf {
-  all,
-  Jahs_Vision,
-  _1,
+    all,
+    Jahs_Vision,
+    _1,
 }
 
 let showf: showSelectionf = showSelectionf.all;
@@ -166,32 +166,32 @@ let showf: showSelectionf = showSelectionf.all;
 const showfBtns = Array.from(document.getElementsByClassName("show-selectf"));
 
 function showHighlightShownf(num: number): void {
-  for (let btn of showfBtns) {
-    btn.className = "show-selectf";
-  }
+    for (let btn of showfBtns) {
+        btn.className = "show-selectf";
+    }
 
-  showfBtns[num].className = "show-selectf selected";
+    showfBtns[num].className = "show-selectf selected";
 }
 
 for (let i = 0; i < showfBtns.length; i++) {
-  showfBtns[i].addEventListener("click", () => {
-    showHighlightShownf(i);
-  });
+    showfBtns[i].addEventListener("click", () => {
+        showHighlightShownf(i);
+    });
 }
 
 showfBtns[0].addEventListener("click", () => {
-  showf = showSelectionf.all;
-  showPhotos();
+    showf = showSelectionf.all;
+    showPhotos();
 });
 
 showfBtns[1].addEventListener("click", () => {
-  showf = showSelectionf._1;
-  showPhotos();
+    showf = showSelectionf._1;
+    showPhotos();
 });
 
 showfBtns[2].addEventListener("click", () => {
-  showf = showSelectionf.Jahs_Vision;
-  showPhotos();
+    showf = showSelectionf.Jahs_Vision;
+    showPhotos();
 });
 
 // filling content
@@ -212,42 +212,42 @@ sections[0].innerHTML = `
 `;
 
 abstract class entry {
-  archive: boolean;
-  img: string;
-  name: string;
-  download: string;
+    archive: boolean;
+    img: string;
+    name: string;
+    download: string;
 
-  constructor(archive: boolean, img: string, name: string, download: string) {
-    this.archive = archive;
-    this.img = img;
-    this.name = name;
-    this.download = download;
-  }
+    constructor(archive: boolean, img: string, name: string, download: string) {
+        this.archive = archive;
+        this.img = img;
+        this.name = name;
+        this.download = download;
+    }
 
-  abstract stringify(): string;
+    abstract stringify(): string;
 }
 
 class doc extends entry {
-  tags: string[];
+    tags: string[];
 
-  constructor(archive: boolean, icon: string, name: string, tags: string[], download: string) {
-    super(archive, icon, name, download);
-    this.tags = tags;
-  }
+    constructor(archive: boolean, icon: string, name: string, tags: string[], download: string) {
+        super(archive, icon, name, download);
+        this.tags = tags;
+    }
 
-  stringify(): string {
-    let e = `
+    stringify(): string {
+        let e = `
             <div class="entry">
                 <img class="entry-icon" src="img/entries/${this.img}.ico">
                 <div class="entry-info">
                     <h1 class="entry-label">${this.name}</h1>
     `;
 
-    this.tags.forEach((tag) => {
-      e += `<h3 class="entry-tag">${tag}</h3>`;
-    });
+        this.tags.forEach((tag) => {
+            e += `<h3 class="entry-tag">${tag}</h3>`;
+        });
 
-    e += `
+        e += `
                 </div>
                 <a href="download/${this.download}" download>
                     <img class="download-icon" src="img/download.png">
@@ -259,55 +259,53 @@ class doc extends entry {
             </div>
     `;
 
-    return e;
-  }
+        return e;
+    }
 }
 
 const fioDocs: doc = new doc(
-  false,
-  "fio",
-  "File In Out",
-  ["Module", "Lua", "Files"],
-  "FIO.pdf"
+    false,
+    "fio",
+    "File In Out",
+    ["Module", "Lua", "Files"],
+    "FIO.pdf"
 );
 
 let docs: doc[] = [fioDocs];
 let docEntries: doc[];
 
 class proj extends entry {
-  version: string;
-  lang: string;
-  bio: string;
-  game: boolean;
+    version: string;
+    lang: string;
+    bio: string;
+    game: boolean;
 
-  constructor(
-    archive: boolean,
-    icon: string,
-    name: string,
-    version: string,
-    lang: string,
-    download: string,
-    bio: string,
-    game: boolean = false
-  ) {
-    super(archive, icon, name, download);
-    this.version = version;
-    this.lang = lang;
-    this.bio = bio;
-    this.game = game;
-  }
+    constructor(
+        archive: boolean,
+        icon: string,
+        name: string,
+        version: string,
+        lang: string,
+        download: string,
+        bio: string,
+        game: boolean = false
+    ) {
+        super(archive, icon, name, download);
+        this.version = version;
+        this.lang = lang;
+        this.bio = bio;
+        this.game = game;
+    }
 
-  stringify(): string {
-    let e = `
+    stringify(): string {
+        let e = `
             <div class="entry">
                 <img class="entry-icon" src="img/entries/${this.img}.ico">
                 <div class="entry-info">
-                    <h1 class="entry-label">${this.name}<span class="version">${
-      this.version
-    }</span></h1>
-                    <h2 class="entry-language">${
-                      !this.game ? "Language[s]" : "Framework"
-                    }: ${this.lang}</h2>
+                    <h1 class="entry-label">${this.name}<span class="version">${this.version
+            }</span></h1>
+                    <h2 class="entry-language">${!this.game ? "Language[s]" : "Framework"
+            }: ${this.lang}</h2>
                 </div>
                 <a href="${this.download}">
                     <img class="download-icon" src="img/download.png">
@@ -320,103 +318,104 @@ class proj extends entry {
             </div>
     `;
 
-    return e;
-  }
+        return e;
+    }
 }
 
 const taskuu: proj = new proj(
-  true,
-  "taskbuddy",
-  "Taskuu",
-  "1.1.0",
-  "Javascript",
-  "download/Taskuu.Setup.exe",
-  `Taskbuddy is a task-keeping app built using electronJS. It was my first "real" Javascript 
+    true,
+    "taskbuddy",
+    "Taskuu",
+    "1.1.0",
+    "Javascript",
+    "download/Taskuu.Setup.exe",
+    `Taskbuddy is a task-keeping app built using electronJS. It was my first "real" Javascript 
 project and was my sign to stay away from Javascript and web development.`
 );
 
 const fileInOut: proj = new proj(
-  false,
-  "fio",
-  "File In Out",
-  "1.0.0",
-  "Lua",
-  "https://luarocks.org/modules/Sk1-z/fio",
-  `File in and out is a very simple and easy to use module for lua that can be installed with luarocks.
+    false,
+    "fio",
+    "File In Out",
+    "1.0.0",
+    "Lua",
+    "https://luarocks.org/modules/Sk1-z/fio",
+    `File in and out is a very simple and easy to use module for lua that can be installed with luarocks.
 Fio provides multiple functions for file system operations and includes some basic JSON operations.
 It was my first module I ever made.`
 );
 
 const schizle: proj = new proj(
-  false,
-  "SchizleLogo",
-  "Schizle",
-  "a-0.5.0",
-  "C",
-  "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha",
-  "Schizle is a very simple scripting language I made with C and premake."
+    false,
+    "SchizleLogo",
+    "Schizle",
+    "a-0.5.0",
+    "C",
+    "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha",
+    "Schizle is a very simple scripting language I made with C and premake."
 );
 
-// const wiced: proj = new proj(
-//   true,
-//   "wic",
-//   "Wiced",
-//   "1.0.0",
-//   "Python",
-//   "download/wic",
-//   "What is my computer even doing is a light curses-based linux performance monitor."
-// );
-
 const preprepake: proj = new proj(
-  false,
-  "2pake",
-  "2pake",
-  "1.0.0",
-  "Lua",
-  "download/2pake",
-  `2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 
+    false,
+    "2pake",
+    "2pake",
+    "1.0.0",
+    "Lua",
+    "download/2pake",
+    `2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 
 makes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers 
 unfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.`
 );
 
 const CompleteC: proj = new proj(
-  false,
-  "CompleteC",
-  "CompleteC",
-  "1.0.0",
-  "C",
-  "download/include.zip",
-  `I made complete C to make C feel more complete and batteries include while still remaining true to the style 
+    false,
+    "CompleteC",
+    "CompleteC",
+    "1.0.0",
+    "C",
+    "download/include.zip",
+    `I made complete C to make C feel more complete and batteries include while still remaining true to the style 
 of the language. It is not meant to make C into a scripting language, just remove the need to make the same 
 types of structs and functions everytime a new project is started in a modular style.`
 );
 
-let projs: proj[] = [CompleteC, preprepake,  schizle, fileInOut, taskuu];
+const ratt: proj = new proj(
+    false,
+    "Ratt",
+    "Ratt",
+    "1.0.0",
+    "Rust",
+    "https://github.com/Sk1-z/Ratt/releases/tag/v1.0.0",
+    `Ratt, a terminal based network chat app. Ratt was my first real experience with multi-threading. It was originally
+built in zig however, due to issues with the language's newness and lack of multithreading support it was ported to rust.`
+);
+
+let projs: proj[] = [ratt, CompleteC, preprepake, schizle, fileInOut, taskuu];
 let projEntries: proj[];
 
 const alienImmigration: proj = new proj(
-  true,
-  "alienimmigration",
-  "Alien Imm...",
-  "1.4.0",
-  "XNA",
-  "download/alienimmigration.zip",
-  `Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.
+    true,
+    "alienimmigration",
+    "Alien Imm...",
+    "1.4.0",
+    "XNA",
+    "download/alienimmigration.zip",
+    `Alien Immigration is a satire story-arcade mix created using Microsoft's XNA framework.
 Alien Immigration was my introduction to C#.`,
-  true
+    true
 );
 
 let games: proj[] = [alienImmigration];
 let gameEntries: proj[];
 
 class foto extends entry {
-  constructor(img: string, name: string) {
-    let download: string = img.slice(-4);
-    super(false, img, name, download);
-  }
+    constructor(img: string, name: string) {
+        let download: string = img.slice(-4);
+        super(false, img, name, download);
+    }
 
-  stringify(): string {
-    let e = `
+    stringify(): string {
+        let e = `
             <div class="photo-entry">
                 <img class="photo" src="img/photography/100_${this.img}.JPG">
                 <h1 class="photo-info">
@@ -427,8 +426,8 @@ class foto extends entry {
                 </a>
             </div>`;
 
-    return e;
-  }
+        return e;
+    }
 }
 
 //render sorts
@@ -436,118 +435,118 @@ class foto extends entry {
 (showBtns[1] as any).click();
 
 function sortEntries(): void {
-  showEntries(); 
+    showEntries();
 
-  sections[1].innerHTML = "";
-  sections[2].innerHTML = "";
-  sections[3].innerHTML = "";
+    sections[1].innerHTML = "";
+    sections[2].innerHTML = "";
+    sections[3].innerHTML = "";
 
-  switch (sort) {
-    case sortSelection.dateD:
-      break;
+    switch (sort) {
+        case sortSelection.dateD:
+            break;
 
-    case sortSelection.dateA:
-      docEntries.reverse();
-      projEntries.reverse();
-      gameEntries.reverse();
-      break;
+        case sortSelection.dateA:
+            docEntries.reverse();
+            projEntries.reverse();
+            gameEntries.reverse();
+            break;
 
-    case sortSelection.AZ:
-      docEntries.sort((a, b) => a.name.localeCompare(b.name));
-      projEntries.sort((a, b) => a.name.localeCompare(b.name));
-      gameEntries.sort((a, b) => a.name.localeCompare(b.name));
-      break;
+        case sortSelection.AZ:
+            docEntries.sort((a, b) => a.name.localeCompare(b.name));
+            projEntries.sort((a, b) => a.name.localeCompare(b.name));
+            gameEntries.sort((a, b) => a.name.localeCompare(b.name));
+            break;
 
-    case sortSelection.ZA:
-      docEntries.sort((b, a) => a.name.localeCompare(b.name));
-      projEntries.sort((b, a) => a.name.localeCompare(b.name));
-      gameEntries.sort((b, a) => a.name.localeCompare(b.name));
-      break;
-  }
+        case sortSelection.ZA:
+            docEntries.sort((b, a) => a.name.localeCompare(b.name));
+            projEntries.sort((b, a) => a.name.localeCompare(b.name));
+            gameEntries.sort((b, a) => a.name.localeCompare(b.name));
+            break;
+    }
 
-  renderEntries();
+    renderEntries();
 
-  let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
+    let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
 
-  for (let btn of expandBtns) {
-    btn.addEventListener("click", () => {
-      expand(btn);
-    });
-  }
+    for (let btn of expandBtns) {
+        btn.addEventListener("click", () => {
+            expand(btn);
+        });
+    }
 }
 
 function showEntries(): void {
-  sections[1].innerHTML = "";
-  sections[2].innerHTML = "";
-  sections[3].innerHTML = "";
+    sections[1].innerHTML = "";
+    sections[2].innerHTML = "";
+    sections[3].innerHTML = "";
 
-  switch (show) {
-    case showSelection.Unarchived:
-      docEntries = [];
-      for (let doc of docs) {
-        if (!(doc.archive)) {
-          docEntries.push(doc);
-        }
-      }
+    switch (show) {
+        case showSelection.Unarchived:
+            docEntries = [];
+            for (let doc of docs) {
+                if (!(doc.archive)) {
+                    docEntries.push(doc);
+                }
+            }
 
-      projEntries = [];
-      for (let proj of projs) {
-        if (!(proj.archive)) {
-          projEntries.push(proj);
-        }
-      }
+            projEntries = [];
+            for (let proj of projs) {
+                if (!(proj.archive)) {
+                    projEntries.push(proj);
+                }
+            }
 
-      gameEntries = [];
-      for (let game of games) {
-        if (!(game.archive)) {
-          gameEntries.push(game);
-        }
-      }
-      break;
+            gameEntries = [];
+            for (let game of games) {
+                if (!(game.archive)) {
+                    gameEntries.push(game);
+                }
+            }
+            break;
 
-    case showSelection.Archived:
-      docEntries = [];
-      for (let doc of docs) {
-        if (doc.archive) {
-          docEntries.push(doc);
-        }
-      }
+        case showSelection.Archived:
+            docEntries = [];
+            for (let doc of docs) {
+                if (doc.archive) {
+                    docEntries.push(doc);
+                }
+            }
 
-      projEntries = [];
-      for (let proj of projs) {
-        if (proj.archive) {
-          projEntries.push(proj);
-        }
-      }
+            projEntries = [];
+            for (let proj of projs) {
+                if (proj.archive) {
+                    projEntries.push(proj);
+                }
+            }
 
-      gameEntries = [];
-      for (let game of games) {
-        if (game.archive) {
-          gameEntries.push(game);
-        }
-      }
-      break;
+            gameEntries = [];
+            for (let game of games) {
+                if (game.archive) {
+                    gameEntries.push(game);
+                }
+            }
+            break;
 
-    case showSelection.All:
-      docEntries = docs;
-      projEntries = projs;
-      gameEntries = games;
-      break;
-  }
+        case showSelection.All:
+            docEntries = docs;
+            projEntries = projs;
+            gameEntries = games;
+            break;
+    }
 
-  renderEntries();
+    renderEntries();
 }
 
 function renderEntries(): void {
-  docEntries.forEach((entryArg) => {
-    sections[1].innerHTML += entryArg.stringify();
-  });
-  projEntries.forEach((entryArg) => {
-    sections[2].innerHTML += entryArg.stringify();
-  });
-  gameEntries.forEach((entryArg) => {
-    sections[3].innerHTML += entryArg.stringify();
-  });
+    docEntries.forEach((entryArg) => {
+        sections[1].innerHTML += entryArg.stringify();
+    });
+    projEntries.forEach((entryArg) => {
+        sections[2].innerHTML += entryArg.stringify();
+    });
+    gameEntries.forEach((entryArg) => {
+        sections[3].innerHTML += entryArg.stringify();
+    });
 }
 
 //foto shenanigans
@@ -572,53 +571,53 @@ const collections: foto[][] = [untitled1, jahsVision];
 let cReversed: boolean = false;
 
 function sortPhotos(): void {
-  switch (sortf) {
-    case sortSelectionf.D:
-      if (cReversed) {
-        collectionNames.reverse();
-        collections.reverse();
-        cReversed = false;
-      }
-      showPhotos();
-      break;
-    case sortSelectionf.A:
-      if (!cReversed) {
-        collectionNames.reverse();
-        collections.reverse();
-        cReversed = true;
-      }
-      showPhotos();
-  }
+    switch (sortf) {
+        case sortSelectionf.D:
+            if (cReversed) {
+                collectionNames.reverse();
+                collections.reverse();
+                cReversed = false;
+            }
+            showPhotos();
+            break;
+        case sortSelectionf.A:
+            if (!cReversed) {
+                collectionNames.reverse();
+                collections.reverse();
+                cReversed = true;
+            }
+            showPhotos();
+    }
 }
 
 function showPhotos(): void {
-  sections[4].innerHTML = "";
+    sections[4].innerHTML = "";
 
-  switch (showf) {
-    case showSelectionf.all:
-      renderCollections(collectionNames, collections);
-      break;
+    switch (showf) {
+        case showSelectionf.all:
+            renderCollections(collectionNames, collections);
+            break;
 
-    case showSelectionf.Jahs_Vision:
-      renderCollections(["Jah's Vision"], [jahsVision]);
-      break;
+        case showSelectionf.Jahs_Vision:
+            renderCollections(["Jah's Vision"], [jahsVision]);
+            break;
 
-    case showSelectionf._1:
-      renderCollections(["Untitled #1"], [untitled1]);
-      break;
-  }
+        case showSelectionf._1:
+            renderCollections(["Untitled #1"], [untitled1]);
+            break;
+    }
 }
 
 function renderCollections(names: string[], collections: foto[][]): void {
-  let i = 0;
-  for (let name of names) {
-    sections[4].innerHTML += `<h1>-${name}-</h1>`;
-    for (let foto of collections[i]) {
-      sections[4].innerHTML += foto.stringify();
+    let i = 0;
+    for (let name of names) {
+        sections[4].innerHTML += `<h1>-${name}-</h1>`;
+        for (let foto of collections[i]) {
+            sections[4].innerHTML += foto.stringify();
+        }
+        sections[4].innerHTML += `<h1>-End Of Collection-</h1>`;
+        i++;
     }
-    sections[4].innerHTML += `<h1>-End Of Collection-</h1>`;
-    i++;
-  }
 }
 
 (sortfBtns[0] as any).click();
@@ -626,19 +625,19 @@ function renderCollections(names: string[], collections: foto[][]): void {
 //expansion
 
 function expand(e: any): void {
-  if (e.classList.contains("expanded")) {
-    e.className = "expand-icon";
-    e.nextElementSibling!.nextElementSibling!.style.display = "none";
-  } else {
-    e.className += " expanded";
-    e.nextElementSibling!.nextElementSibling!.style.display = "block";
-  }
+    if (e.classList.contains("expanded")) {
+        e.className = "expand-icon";
+        e.nextElementSibling!.nextElementSibling!.style.display = "none";
+    } else {
+        e.className += " expanded";
+        e.nextElementSibling!.nextElementSibling!.style.display = "block";
+    }
 }
 
 let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
 
-  for (let btn of expandBtns) {
+for (let btn of expandBtns) {
     btn.addEventListener("click", () => {
-      expand(btn);
+        expand(btn);
     });
-  }
+}
