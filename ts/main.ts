@@ -361,7 +361,7 @@ const preprepake: proj = new proj(
     "2pake",
     "1.0.0",
     "Lua",
-    "download/2pake",
+    "download/2pake.lua",
     `2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 
 makes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers 
 unfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.`
