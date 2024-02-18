@@ -390,7 +390,18 @@ const ratt: proj = new proj(
 built in zig however, due to issues with the language's newness and lack of multithreading support it was ported to rust.`
 );
 
-let projs: proj[] = [ratt, CompleteC, preprepake, schizle, fileInOut, taskuu];
+const Contra: proj = new proj(
+    false,
+    "Contra",
+    "Contra",
+    "1.0.0",
+    "C#",
+    "https://github.com/Sk1-z/Contra/releases/tag/v1.0.0",
+    `Contra is a secure desktop password manager I made using Gtk#. I tried both avalonia and eto.forms, but due to my use of neovim instead of visual studio, ran into issues and eventually decided to use Gtk# as it was both the most neovim friendly C# gui framework I could find and very easy to use due to glade and the large amount of documentation available.`
+);
+
+
+let projs: proj[] = [Contra, ratt, CompleteC, preprepake, schizle, fileInOut, taskuu];
 let projEntries: proj[];
 
 const alienImmigration: proj = new proj(
