@@ -264,7 +264,7 @@ class doc extends entry {
 }
 
 const fioDocs: doc = new doc(
-    false,
+    true,
     "fio",
     "File In Out",
     ["Module", "Lua", "Files"],
@@ -334,24 +334,24 @@ project and was my sign to stay away from Javascript and web development.`
 );
 
 const fileInOut: proj = new proj(
-    false,
+    true,
     "fio",
     "File In Out",
     "1.0.0",
     "Lua",
-    "https://luarocks.org/modules/Sk1-z/fio",
+    "download/Fio.lua",
     `File in and out is a very simple and easy to use module for lua that can be installed with luarocks.
 Fio provides multiple functions for file system operations and includes some basic JSON operations.
 It was my first module I ever made.`
 );
 
 const schizle: proj = new proj(
-    false,
+    true,
     "SchizleLogo",
     "Schizle",
     "a-0.5.0",
     "C",
-    "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha",
+    "download/Schizle",
     "Schizle is a very simple scripting language I made with C and premake."
 );
 
@@ -476,14 +476,6 @@ function sortEntries(): void {
     }
 
     renderEntries();
-
-    let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
-
-    for (let btn of expandBtns) {
-        btn.addEventListener("click", () => {
-            expand(btn);
-        });
-    }
 }
 
 function showEntries(): void {
@@ -558,6 +550,14 @@ function renderEntries(): void {
     gameEntries.forEach((entryArg) => {
         sections[3].innerHTML += entryArg.stringify();
     });
+
+    let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
+
+    for (let btn of expandBtns) {
+        btn.addEventListener("click", () => {
+            expand(btn);
+        });
+    }
 }
 
 //foto shenanigans
@@ -643,12 +643,4 @@ function expand(e: any): void {
         e.className += " expanded";
         e.nextElementSibling!.nextElementSibling!.style.display = "block";
     }
-}
-
-let expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
-
-for (let btn of expandBtns) {
-    btn.addEventListener("click", () => {
-        expand(btn);
-    });
 }

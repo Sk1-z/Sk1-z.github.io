@@ -217,7 +217,7 @@ var doc = /** @class */ (function (_super) {
     };
     return doc;
 }(entry));
-var fioDocs = new doc(false, "fio", "File In Out", ["Module", "Lua", "Files"], "FIO.pdf");
+var fioDocs = new doc(true, "fio", "File In Out", ["Module", "Lua", "Files"], "FIO.pdf");
 var docs = [fioDocs];
 var docEntries;
 var proj = /** @class */ (function (_super) {
@@ -238,8 +238,8 @@ var proj = /** @class */ (function (_super) {
     return proj;
 }(entry));
 var taskuu = new proj(true, "taskbuddy", "Taskuu", "1.1.0", "Javascript", "download/Taskuu.Setup.exe", "Taskbuddy is a task-keeping app built using electronJS. It was my first \"real\" Javascript \nproject and was my sign to stay away from Javascript and web development.");
-var fileInOut = new proj(false, "fio", "File In Out", "1.0.0", "Lua", "https://luarocks.org/modules/Sk1-z/fio", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
-var schizle = new proj(false, "SchizleLogo", "Schizle", "a-0.5.0", "C", "https://github.com/Sk1-z/Schizle/releases/tag/v0.5.0-alpha", "Schizle is a very simple scripting language I made with C and premake.");
+var fileInOut = new proj(true, "fio", "File In Out", "1.0.0", "Lua", "download/Fio.lua", "File in and out is a very simple and easy to use module for lua that can be installed with luarocks.\nFio provides multiple functions for file system operations and includes some basic JSON operations.\nIt was my first module I ever made.");
+var schizle = new proj(true, "SchizleLogo", "Schizle", "a-0.5.0", "C", "download/Schizle", "Schizle is a very simple scripting language I made with C and premake.");
 var preprepake = new proj(false, "2pake", "2pake", "1.0.0", "Lua", "download/2pake.lua", "2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 \nmakes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers \nunfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.");
 var CompleteC = new proj(false, "CompleteC", "CompleteC", "1.0.0", "C", "download/include.zip", "I made complete C to make C feel more complete and batteries include while still remaining true to the style \nof the language. It is not meant to make C into a scripting language, just remove the need to make the same \ntypes of structs and functions everytime a new project is started in a modular style.");
 var ratt = new proj(false, "Ratt", "Ratt", "1.0.0", "Rust", "https://github.com/Sk1-z/Ratt/releases/tag/v1.0.0", "Ratt, a terminal based network chat app. Ratt was my first real experience with multi-threading. It was originally\nbuilt in zig however, due to issues with the language's newness and lack of multithreading support it was ported to rust.");
@@ -289,16 +289,6 @@ function sortEntries() {
             break;
     }
     renderEntries();
-    var expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
-    var _loop_7 = function (btn) {
-        btn.addEventListener("click", function () {
-            expand(btn);
-        });
-    };
-    for (var _i = 0, expandBtns_2 = expandBtns; _i < expandBtns_2.length; _i++) {
-        var btn = expandBtns_2[_i];
-        _loop_7(btn);
-    }
 }
 function showEntries() {
     sections[1].innerHTML = "";
@@ -369,6 +359,16 @@ function renderEntries() {
     gameEntries.forEach(function (entryArg) {
         sections[3].innerHTML += entryArg.stringify();
     });
+    var expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
+    var _loop_6 = function (btn) {
+        btn.addEventListener("click", function () {
+            expand(btn);
+        });
+    };
+    for (var _i = 0, expandBtns_1 = expandBtns; _i < expandBtns_1.length; _i++) {
+        var btn = expandBtns_1[_i];
+        _loop_6(btn);
+    }
 }
 //foto shenanigans
 //u1
@@ -445,14 +445,4 @@ function expand(e) {
         e.className += " expanded";
         e.nextElementSibling.nextElementSibling.style.display = "block";
     }
-}
-var expandBtns = Array.from(document.getElementsByClassName("expand-icon"));
-var _loop_6 = function (btn) {
-    btn.addEventListener("click", function () {
-        expand(btn);
-    });
-};
-for (var _i = 0, expandBtns_1 = expandBtns; _i < expandBtns_1.length; _i++) {
-    var btn = expandBtns_1[_i];
-    _loop_6(btn);
 }
