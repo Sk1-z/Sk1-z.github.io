@@ -355,25 +355,13 @@ const schizle: proj = new proj(
     "Schizle is a very simple scripting language I made with C and premake."
 );
 
-const preprepake: proj = new proj(
-    false,
-    "2pake",
-    "2pake",
-    "1.0.0",
-    "Lua",
-    "download/2pake.lua",
-    `2pake, 2p make, or prepremake is a premake5 script generator which generates make files. Although premake5 
-makes makefiles alot easier, it can be cumbersome to learn how to use, espicially for newer programmers 
-unfamilier with build systems like make. So, prepremake makes this easy and does everything through cli prompts.`
-);
-
 const CompleteC: proj = new proj(
-    false,
+    true,
     "CompleteC",
     "CompleteC",
     "1.0.0",
     "C",
-    "download/include.zip",
+    "download/stdc.zip",
     `I made complete C to make C feel more complete and batteries include while still remaining true to the style 
 of the language. It is not meant to make C into a scripting language, just remove the need to make the same 
 types of structs and functions everytime a new project is started in a modular style.`
@@ -400,8 +388,18 @@ const Contra: proj = new proj(
     `Contra is a secure desktop password manager I made using Gtk#. I tried both avalonia and eto.forms, but due to my use of neovim instead of visual studio, ran into issues and eventually decided to use Gtk# as it was both the most neovim friendly C# gui framework I could find and very easy to use due to glade and the large amount of documentation available.`
 );
 
+const tim: proj = new proj(
+  false,
+  "Tindy",
+  "Tindy",
+  "1.0.0",
+  "Rust, Python",
+  "download/tindy.sh",
+  `Tindy is a terminal app for taking notes in markdown. The app was written in rust, but the live preview feature comes a http server made in python.`
+)
 
-let projs: proj[] = [Contra, ratt, CompleteC, preprepake, schizle, fileInOut, taskuu];
+
+let projs: proj[] = [tim, Contra, ratt, CompleteC, schizle, fileInOut, taskuu];
 let projEntries: proj[];
 
 const alienImmigration: proj = new proj(

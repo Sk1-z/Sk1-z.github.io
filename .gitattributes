@@ -7,3 +7,4 @@
 *.html linguist-vendored
 *.css linguist-vendored
 *.lua linguist-vendored
+*.sh linguist-vendored
